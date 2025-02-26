@@ -7,12 +7,21 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; text-align: center; }
         header { background-color: #333; color: white; padding: 20px; font-size: 24px; }
-        .container { max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #333; }
+        .container { max-width: 800px; margin: 50px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        
+        /* Tabs */
+        .tabs { display: flex; justify-content: center; background: #555; }
+        .tab { flex: 1; padding: 15px; color: white; cursor: pointer; text-align: center; font-size: 18px; }
+        .tab:hover { background: #777; }
+        .active-tab { background: #222; }
+
+        /* Content */
+        .content { display: none; padding: 20px; }
+        .show { display: block; }
+
         .btn { display: inline-block; padding: 10px 20px; margin: 10px; color: white; background: #007BFF; text-decoration: none; border-radius: 5px; }
         .btn:hover { background: #0056b3; }
-        .projects { text-align: left; }
-        .project { margin-bottom: 20px; }
+        
         footer { margin-top: 20px; padding: 10px; background-color: #333; color: white; }
     </style>
 </head>
@@ -21,26 +30,31 @@
     <header>Manav's Portfolio</header>
 
     <div class="container">
-        <h1>Hi, I'm Manav 👋</h1>
-        <p>Computer Science student at King's College London.</p>
+        <h1>Hi, I'm Manav!</h1>
+        <p>I'm a Computer Science student at King's College London.</p>
 
-        <a href="Manav Sukheja CV.pdf" download class="btn">Download My Resume</a>
+        <div class="tabs">
+            <div class="tab active-tab" onclick="showTab('about')">About Me</div>
+            <div class="tab" onclick="showTab('projects')">My Projects</div>
+        </div>
 
-        <h2>About Me</h2>
-        <p>I'm passionate about software development, web applications, and problem-solving. Currently working on Django projects and always eager to learn new technologies.</p>
+        <div id="about" class="content show">
+            <h2>About Me</h2>
+            <p>I am passionate about **software development, web applications, and problem-solving**.</p>
+            <p>I am also interested in **investing**, learning about **mutual funds, index funds, and the stock market**.</p>
+            <h3>My Work at KCL India Society</h3>
+            <p>I'm an **Events Officer** for the **KCL India Society**, organizing cultural events and applying for the **President role**.</p>
+            <h3>Work Experience</h3>
+            <p>I worked as a **Sales Assistant at Stradivarius on Oxford Street**, gaining problem-solving and customer service skills.</p>
+            <h3>Resume</h3>
+            <a href="Manav Sukheja CV.pdf" download class="btn">Download My Resume</a>
+        </div>
 
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Polling System Web App</h3>
-                <p>A Django-based polling system where professors can create quizzes.</p>
-                <a href="https://github.com/Arif1025/Placeholder" class="btn">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Tutoring Company Website</h3>
-                <p>A website for a tutoring service, featuring a tutor dashboard.</p>
-                <a href="https://github.com/kaugust24/Hartebeest" class="btn">View on GitHub</a>
-            </div>
+        <div id="projects" class="content">
+            <h2>My Projects</h2>
+            <p>Here are some of my key projects:</p>
+            <a href="https://github.com/Arif1025/Placeholder" class="btn">Polling System Web App</a>
+            <a href="https://github.com/kaugust24/Hartebeest" class="btn">Tutoring Company Website</a>
         </div>
     </div>
 
@@ -50,6 +64,19 @@
             <a href="https://www.linkedin.com/in/manav-sukheja-978232275/" style="color: lightblue;">LinkedIn</a>
         </p>
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all content
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('show'));
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active-tab'));
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('show');
+            // Set active class on selected tab
+            event.target.classList.add('active-tab');
+        }
+    </script>
 
 </body>
 </html>
