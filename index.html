@@ -5,16 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manav's Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #333; }
-        a { text-decoration: none; color: blue; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; text-align: center; }
+        header { background-color: #333; color: white; padding: 20px; font-size: 24px; }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; }
+        .btn { display: inline-block; padding: 10px 20px; margin: 10px; color: white; background: #007BFF; text-decoration: none; border-radius: 5px; }
+        .btn:hover { background: #0056b3; }
+        .projects { text-align: left; }
+        .project { margin-bottom: 20px; }
+        footer { margin-top: 20px; padding: 10px; background-color: #333; color: white; }
     </style>
 </head>
 <body>
-    <h1>Hi, I'm Manav 👋</h1>
-    <p>Computer Science student at King's College London.</p>
-    <p><a href="https://github.com/manav" target="_blank">GitHub</a> | 
-       <a href="https://linkedin.com/in/manav" target="_blank">LinkedIn</a></p>
-    <p>More coming soon!</p>
+
+    <header>Manav's Portfolio</header>
+
+    <div class="container">
+        <h1>Hi, I'm Manav 👋</h1>
+        <p>Computer Science student at King's College London.</p>
+
+        <a href="Manav Sukheja CV.pdf" download class="btn">Download My Resume</a>
+
+        <h2>About Me</h2>
+        <p>I'm passionate about software development, web applications, and problem-solving. Currently working on Django projects and always eager to learn new technologies.</p>
+
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Polling System Web App</h3>
+                <p>A Django-based polling system where professors can create quizzes.</p>
+                <a href="https://github.com/Arif1025/Placeholder" class="btn">View on GitHub</a>
+            </div>
+            <div class="project">
+                <h3>Tutoring Company Website</h3>
+                <p>A website for a tutoring service, featuring a tutor dashboard.</p>
+                <a href="https://github.com/kaugust24/Hartebeest" class="btn">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Connect with me: 
+            <a href="https://github.com/K23070652" style="color: lightblue;">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/manav-sukheja-978232275/" style="color: lightblue;">LinkedIn</a>
+        </p>
+    </footer>
+
 </body>
 </html>
